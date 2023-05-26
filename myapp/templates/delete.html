@@ -1,0 +1,41 @@
+<html>
+    <style>
+      table{
+        background-color:lightblue;
+      }
+        table, th, td {
+            border: 1px solid;
+            background color:green ;
+            height:10px;
+            width:100px;
+            padding:20px;
+            margin:auto;
+            
+          }
+    </style>
+    <body>
+        <table>
+            <tr>
+                <th>Product Name</th>
+                <th>Prize</th>
+                <th>Ram</th>
+                <th>Model</th>
+                <th>Delete</th>
+                <th>Update</th>
+
+            </tr>
+            {% for i in all_pro %}
+              <tr>
+                <td>{{i.Product_name.Product_Name}}</td>
+                <td>{{i.Product_prize}}</td>
+                <td>{{i.Product_ram}}</td>
+                <td>{{i.Product_model}}</td>
+                <td><button><a href='/delete_items/<int:pk>'>Delete</a></button></td>
+                <td><button><a href='/update/<int:pk>'>Update</a></button></td>
+
+              </tr>
+            {% endfor %}
+            </table>
+    </body>
+</html>
+    
